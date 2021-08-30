@@ -1,6 +1,6 @@
 //this module acts as main.js from what we have been doing; this is just for layout
 import { CustomerList } from "./customers/CustomerList";
-import { EmployeeList } from "./customers/EmployeeList";
+import { EmployeeList } from "./employees/EmployeeList";
 
 export const Repairs = () => { // defining and exporting component; this function should return JSX that shows in the browser
 
