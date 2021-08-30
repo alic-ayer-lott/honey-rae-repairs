@@ -21,7 +21,7 @@ export const CustomerList = () => { // defining and exporting component; this fu
         {
             customers.map( // using .map as array method conversion tool
                 (customerObject) => {
-                    return <h2 key={`customer --${customerObject.id}`}>{customerObject.name}</h2> //do not need $ to interpolate in JSX
+                    return <h3 key={`customer --${customerObject.id}`}>{customerObject.name}</h3> //do not need $ to interpolate in JSX
                 }
             )
         }
