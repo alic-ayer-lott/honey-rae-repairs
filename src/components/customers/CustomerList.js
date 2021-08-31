@@ -4,10 +4,11 @@ import React, { useEffect, useState } from "react"; // importing React here so w
 export const CustomerList = () => { // defining and exporting component; this function should return JSX that shows in the browser
     const [customers, setCustomers] = useState([]) //invoking use state will return an array; why there is an array as the const on the left
         // setCustomers variables job is to hold function that modifies state for customers
-    const [totalCustomerMessage, updateMessage] = useState("")
+    const [totalCustomerMessage, updateMessage] = useState("") //message will be updated every time customer state changes
     
     useEffect(
         () => {
+            console.log("Initial useEffect") // to show how code is working in order
             fetch("http://localhost:8088/customers")
                 .then(res => res.json())
                 .then((customerArray) => {
@@ -19,7 +20,8 @@ export const CustomerList = () => { // defining and exporting component; this fu
         //sole purpose of useEffect is to run certain code when state changes
 
     useEffect(
-        () => {
+        () => { //first parameter for useEffect; if statement
+            console.log("Customers state changed")
             if (customers.length === 1) {
                 updateMessage("You have 1 customer")
             }
@@ -27,13 +29,14 @@ export const CustomerList = () => { // defining and exporting component; this fu
                 updateMessage(`You have ${customers.length} customers`)
             }
         },
-        [customers]
+        [customers] // second parameter for useEffect; array holding state variable of when useEffect should run; when customers changes
     )
 
     return ( //must have return statement here to generate the HTML
         <>
+            <div>{totalCustomerMessage}</div>
         {
-            customers.map( // using .map as array method conversion tool
+            customers.slice(0,5).map( // using .map as array method conversion tool; .slice to show which slots of array you want to display
                 (customerObject) => {
                     return <h3 key={`customer --${customerObject.id}`}>{customerObject.name}</h3> //do not need $ to interpolate in JSX
                 }
