@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 
-export const EmployeeList = () => {
-    const [employees, changeEmployee] = useState([])
+export const EmployeeList = () => { //function that will render the JSX
+    const [employees, changeEmployee] = useState([]) //useState returns an array; changeEmployee holding function that modifies state
     const [specialties, setSpecialty] = useState([])
 
     useEffect(
