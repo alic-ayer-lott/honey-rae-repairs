@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"; // importing React here so w
 
 export const CustomerList = () => { // defining and exporting component; this function should return JSX that shows in the browser
     const [customers, setCustomers] = useState([]) //invoking use state will return an array; why there is an array as the const on the left
-        // setCustomers variables job is to hold function that modifies state for customers
+        // setCustomers variables job is to hold function that modifies state for customers; customers is a variable
     const [totalCustomerMessage, updateMessage] = useState("") //message will be updated every time customer state changes
     
     useEffect(
@@ -38,7 +38,7 @@ export const CustomerList = () => { // defining and exporting component; this fu
         {
             customers.slice(0,5).map( // using .map as array method conversion tool; .slice to show which slots of array you want to display
                 (customerObject) => {
-                    return <h3 key={`customer --${customerObject.id}`}>{customerObject.name}</h3> //do not need $ to interpolate in JSX
+                    return <h3 key={`customer --${customerObject.id}`}>{customerObject.name}</h3> //do not need $ to interpolate in JSX; the customer-- is because the id will just return a number
                 }
             )
         }

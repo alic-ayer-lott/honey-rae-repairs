@@ -16,6 +16,6 @@ export const Repairs = () => { // defining and exporting component; this functio
 
             <h2>Service Tickets</h2>
             <TicketList />
-        </>
+        </> //must wrap in fragment if you are returning more than one element
     )
 }
