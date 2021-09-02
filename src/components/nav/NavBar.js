@@ -14,6 +14,16 @@ export const NavBar = (props) => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/tickets">Service Tickets</Link> 
             </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="#"
+                    onClick={
+                        () => {
+                            localStorage.removeItem("honey_customer") //this will remove the key for the specific customer from local storage and "logout"
+                        }
+                    }>
+                        Logout
+                </Link> 
+            </li>
         </ul> //"link" components job is to generate anchor tags; sole job; "to" attritube is the HREF of anchor tag
     )
 }
