@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom";
+import "./Tickets.css"
 
 export const TicketForm = () => {
     const [ticket, updateTicket] = useState({
