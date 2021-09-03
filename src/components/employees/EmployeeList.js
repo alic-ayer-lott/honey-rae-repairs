@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react"
+import { useHistory } from "react-router-dom"
+
 
 export const EmployeeList = () => { //function that will render the JSX
     const [employees, changeEmployee] = useState([]) //useState returns an array; changeEmployee holding function that modifies state
     const [specialties, setSpecialty] = useState([])
+    const history = useHistory()
 
     useEffect(
         () => {
@@ -27,6 +30,9 @@ export const EmployeeList = () => { //function that will render the JSX
 
     return (
         <>
+                <div>
+                <button onClick={() => history.push("/employee/create")}>Hire Employee</button>
+                </div>
             <div>
                 Specialties: { specialties }
             </div>

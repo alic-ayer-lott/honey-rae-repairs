@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import "./Tickets.css"
-import { TicketForm } from "./TicketForm"
 
 export const TicketList = () => { //function that will render the JSX
     const [tickets, updateTickets] = useState([]) //updateTickets is the function that sets what is being held by tickets variable
@@ -39,8 +38,7 @@ export const TicketList = () => { //function that will render the JSX
                 tickets.map(
                     (ticket) => {
                         return <p key={`ticket--${ticket.id}`}>
-                            {ticket.description} submitted by {ticket.customer.name}
-                            and worked on by {ticket.employee.name}.
+                            {ticket.description} submitted by {ticket.customer.name} and worked on by {ticket.employee.name}.
                             </p>
                     }
                 )
