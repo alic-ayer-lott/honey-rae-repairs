@@ -7,6 +7,7 @@ import { Route } from "react-router-dom"
 import { CustomerList } from "./customers/CustomerList"
 import { EmployeeList } from "./employees/EmployeeList"
 import { TicketList } from "./serviceTickets/TicketList"
+import { TicketForm } from "./serviceTickets/TicketForm"
 
 export const ApplicationViews = () => {
     return (
@@ -19,10 +20,14 @@ export const ApplicationViews = () => {
                 <EmployeeList />
             </Route>
 
-            <Route path="/tickets">
+            <Route exact path="/tickets">
                 <TicketList /> 
+            </Route>
+
+            <Route path="/ticket/create">
+                <TicketForm />
             </Route>
         </>
     )
 }
-//EmployeeList and CustomerList and children of the route paths
+//EmployeeList and CustomerList are children of the route paths

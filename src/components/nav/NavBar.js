@@ -18,7 +18,7 @@ export const NavBar = (props) => {
                 <Link className="navbar__link" to="#"
                     onClick={
                         () => {
-                            localStorage.removeItem("honey_customer") //this will remove the key for the specific customer from local storage and "logout"
+                            localStorage.removeItem("honey_customer") //this will remove the key for the specific customer from local storage and 
                         }
                     }>
                         Logout
