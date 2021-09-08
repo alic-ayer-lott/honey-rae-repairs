@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { useHistory } from "react-router-dom"
 import "./Login.css"
 
+
 export const Register = (props) => {
     const [customer, setCustomer] = useState({})
     const conflictDialog = useRef()
@@ -28,7 +29,7 @@ export const Register = (props) => {
                         .then(res => res.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
-                                localStorage.setItem("honey_customer", createdUser.id) //localStorage.setItem is a key value pair
+                                localStorage.setItem("honey_customer", createdUser.id) //localStorage.setItem is a key value pair; new customer will have a primary key and will be stored in local storage
                                 history.push("/")
                             }
                         })

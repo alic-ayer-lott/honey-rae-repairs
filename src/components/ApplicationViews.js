@@ -9,6 +9,7 @@ import { EmployeeList } from "./employees/EmployeeList"
 import { TicketList } from "./serviceTickets/TicketList"
 import { TicketForm } from "./serviceTickets/TicketForm"
 import { EmployeeForm } from "./employees/EmployeeForm"
+import { Ticket } from "./serviceTickets/Ticket"
 
 export const ApplicationViews = () => {
     return (
@@ -32,6 +33,10 @@ export const ApplicationViews = () => {
             <Route path="/employee/create">
                 <EmployeeForm />
             </Route>
+
+            <Route exact path="/tickets/:ticketId(\d+)"> 
+                <Ticket />
+            </Route> {/* Making a new route path */}
 
         </>
     )
