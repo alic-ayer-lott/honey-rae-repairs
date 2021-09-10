@@ -34,9 +34,9 @@ export const ApplicationViews = () => {
                 <EmployeeForm />
             </Route>
 
-            <Route exact path="/tickets/:ticketId(\d+)"> 
+            <Route exact path="/tickets/:ticketId(\d+)"> {/* Whatever you name the variable after the : here is what you must put into object destructuring for your HTML */}
                 <Ticket />
-            </Route> {/* Making a new route path */}
+            </Route> {/* Making a new route path; the (\d+) ensures that it ONLY invokes this SPECIFIC route */}
 
         </>
     )
